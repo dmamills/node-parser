@@ -1,15 +1,7 @@
 var fs = require('fs'),
-    Scanner = require('./src/scanner');
+    Lexer = require('./src/lexer');
 
-var text = "HELLO WORLD \n THIS IS TEXT";
-var scanner = new Scanner(text);
-var a = scanner.run();
-
-console.log('POS\tLINENO\tCOLNO\tVAL');
-
-a.forEach(function(el){
-  console.log(el.getPos() +
-              '\t' + el.getLineNo() +
-              '\t' + el.getColNo() +
-              '\t' +el.toString());
-});
+var text = "Hello World\n THIS\t IS if else 'TEXT is a string' also some \"another string\" numbers 123 42.34 lol wow";
+var l = new Lexer(text);
+var r = l.run();
+console.log(r);
