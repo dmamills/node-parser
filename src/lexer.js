@@ -72,6 +72,21 @@ Lexer.prototype.run = function() {
             r.push(token);
             continue;
         }
+
+        if(SYMBOLS.twoChar.indexOf(c.toString()+a[0].toString()) > -1) {
+            token.cargo = c.toString() + a.shift().toString();
+            token.type = token.cargo;
+            r.push(token);
+            continue;
+        }
+
+        if(SYMBOLS.oneChar.indexOf(c.toString())>-1) {
+            token.cargo = c.toString();
+            token.type = token.cargo;
+            r.push(token);
+            continue;
+        }
+
     }
 
     return r;
