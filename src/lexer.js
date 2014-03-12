@@ -29,6 +29,12 @@ Lexer.prototype.run = function() {
             continue;
         }
 
+        if(c.toString() == "NEWLINE") {
+            token.type = SYMBOLS.TOKEN_TYPES.NEWLINE;
+            r.push(token);
+            continue;
+        }
+
         if(SYMBOLS.ID_START_CHARS.indexOf(c.toString()) > -1) {
             token.type =  SYMBOLS.TOKEN_TYPES.IDENTIFIER;
             while(SYMBOLS.ID_CHARS.indexOf(a[0].toString()) >-1) {
@@ -86,7 +92,6 @@ Lexer.prototype.run = function() {
             r.push(token);
             continue;
         }
-
     }
 
     return r;

@@ -1,7 +1,7 @@
 var fs = require('fs'),
     Lexer = require('./src/lexer');
 
-var text = "Hello World\n THIS\t IS 5 == 2 if else 'TEXT is a string' also 2 + 4 some \"another string\" numbers 123 42.34 lol wow";
+var text = "FOO = 5\nBAR = 'some neato string'\nFOOBAR = FOO + 2\n if FOOBAR == FOO+2 BAR ='WOW'\n"
 var l = new Lexer(text);
 var r = l.run();
 console.log(r);

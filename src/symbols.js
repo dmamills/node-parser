@@ -4,12 +4,10 @@ var symbols = {};
 Defines language grammar
 */
 
-
 symbols.keywords = "if then else elseif endif while loop endloop print return exit".split(' ');
 symbols.oneChar = "= ( ) < > / * + - ! & . ;".split(' ');
 symbols.twoChar = "== <= >= <> != ++ ** -- += -= ||".split(' ');
 symbols.whitespace = " \t\n".split('');
-
 
 symbols.ID_START_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split('');
 symbols.ID_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_".split('');
@@ -24,6 +22,7 @@ symbols.TOKEN_TYPES = {
     NUMBER:"Number",
     WHITESPACE: "Whitespace",
     COMMENT: "Comment",
+    NEWLINE:"Newline",
     EOF: "Eof"
 };
 
